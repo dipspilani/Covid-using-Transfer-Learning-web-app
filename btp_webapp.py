@@ -66,21 +66,21 @@ elif mode=='Normal':
         return model5
 
         
-    st.sidebar.subheader('Select sample file to make predictions upon')    
-    texx = st.sidebar.text_input(label="Enter File Name (as selected in the file uploader)" , max_chars = 30 , value = "")
-    if "." in texx:
-        try:
-            xray1 = image.load_img(texx , target_size=(224,224))
-            img_array = image.img_to_array(xray1)
-            img_batch = np.expand_dims(img_array, axis=0)
-            vgg = tf.keras.applications.vgg16.preprocess_input(img_batch)
-            mn = tf.keras.applications.mobilenet.preprocess_input(img_batch)
-            rn = tf.keras.applications.resnet50.preprocess_input(img_batch)
-            en = tf.keras.applications.efficientnet.preprocess_input(img_batch)
-        except:
-            st.sidebar.markdown('File does not exist in directory/invalid file type')
-    else:
-        st.sidebar.markdown('Enter file name with its file type (eg abc.png)')  
+#     st.sidebar.subheader('Select sample file to make predictions upon')    
+#     texx = st.sidebar.text_input(label="Enter File Name (as selected in the file uploader)" , max_chars = 30 , value = "")
+#     if "." in texx:
+#         try:
+#             xray1 = image.load_img(texx , target_size=(224,224))
+#             img_array = image.img_to_array(xray1)
+#             img_batch = np.expand_dims(img_array, axis=0)
+#             vgg = tf.keras.applications.vgg16.preprocess_input(img_batch)
+#             mn = tf.keras.applications.mobilenet.preprocess_input(img_batch)
+#             rn = tf.keras.applications.resnet50.preprocess_input(img_batch)
+#             en = tf.keras.applications.efficientnet.preprocess_input(img_batch)
+#         except:
+#             st.sidebar.markdown('File does not exist in directory/invalid file type')
+#     else:
+#         st.sidebar.markdown('Enter file name with its file type (eg abc.png)')  
         
 
 
@@ -90,15 +90,16 @@ elif mode=='Normal':
 
     if sample is not None:
         try:
-            #ximg = Image.open(sample)
-            #pix = image.img_to_array(ximg)
-            #pix = image.smart_resize(pix,(224,224))
+            ximg = Image.open(sample)
+            ximg = ximg.convert('RGB')
+            pix = image.img_to_array(ximg)
+            pix = image.smart_resize(pix,(224,224))
            
-            #pix = np.array([pix])
-            #vgg = tf.keras.applications.vgg16.preprocess_input(pix)
-            #mn = tf.keras.applications.mobilenet.preprocess_input(pix)
-            #rn = tf.keras.applications.resnet50.preprocess_input(pix)
-            #en = tf.keras.applications.efficientnet.preprocess_input(pix)
+            pix = np.array([pix])
+            vgg = tf.keras.applications.vgg16.preprocess_input(pix)
+            mn = tf.keras.applications.mobilenet.preprocess_input(pix)
+            rn = tf.keras.applications.resnet50.preprocess_input(pix)
+            en = tf.keras.applications.efficientnet.preprocess_input(pix)
 
 
             
