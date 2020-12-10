@@ -88,6 +88,12 @@ elif mode=='Normal':
     sample = st.file_uploader(label="Select File (.png or .jpg)" , type=['png','jpg'])
 
     if sample is not None:
+        xx = st.checkbox('Display Image')
+        if xx:
+            try:
+                st.image(sample.read(),caption="X-Ray sample" , use_column_width=True)
+            except:
+                st.warning('Invalid Image')    
         try:
             ximg = Image.open(sample)
             ximg = ximg.convert('RGB')
@@ -105,12 +111,7 @@ elif mode=='Normal':
             st.success('File Uploaded')
         except:
             st.warning('Please choose a valid file')
-        xx = st.checkbox('Display Image')
-        if xx:
-            try:
-                st.image(Image.display(sample),caption="X-Ray sample" , use_column_width=True)
-            except:
-                st.warning('Invalid Image')
+        
         
         
     st.sidebar.subheader("Get prediction from model")
