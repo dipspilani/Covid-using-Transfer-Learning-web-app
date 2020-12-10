@@ -40,7 +40,6 @@ elif mode=='Normal':
     st.sidebar.subheader('Steps to use the tool:')
     st.sidebar.info('1. Move the image to the same working directory as the .py file')
     st.sidebar.info('2. Browse and open the file using File Uploader')
-    st.sidebar.info('3. Copy file name of the uploaded image in the text box')
     st.sidebar.info('3. Select Model')
 
     
@@ -109,7 +108,7 @@ elif mode=='Normal':
         xx = st.checkbox('Display Image')
         if xx:
             try:
-                st.image(sample.read(),caption="X-Ray sample" , use_column_width=True)
+                st.image(Image.display(sample),caption="X-Ray sample" , use_column_width=True)
             except:
                 st.warning('Invalid Image')
         
