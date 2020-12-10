@@ -169,18 +169,18 @@ elif mode=='Normal':
         with st.spinner('Loading EfficientNetB0..'):
             emodel = load_effnet()
             time.sleep(3)
-        try:
-            b = emodel.predict(en)
-            st.write('COVID-19 Probability% :')
-            st.write(b[0][0]*100)
-            a = np.argmax(b)
-            if a==0:
-                st.warning("**EfficientNet Prediction:** COVID-19 Diagnosed")
-            elif a==1:
-                st.success("**EfficientNet Prediction:** Sample is COVID negative")        
+        #try:
+        b = emodel.predict(en)
+        st.write('COVID-19 Probability% :')
+        st.write(b[0][0]*100)
+        a = np.argmax(b)
+        if a==0:
+           st.warning("**EfficientNet Prediction:** COVID-19 Diagnosed")
+        elif a==1:
+            st.success("**EfficientNet Prediction:** Sample is COVID negative")        
 
-        except:
-            st.sidebar.markdown('Please choose a valid file first')
+        #except:
+        #    st.sidebar.markdown('Please choose a valid file first')
 
 
 elif mode=='Statistics':
