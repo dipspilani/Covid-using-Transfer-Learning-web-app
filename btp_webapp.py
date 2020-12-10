@@ -61,7 +61,7 @@ elif mode=='Normal':
 
     @st.cache(allow_output_mutation=True , hash_funcs={tf.keras.models.Model: id})
     def load_effnet():
-        model5 = tf.keras.models.load_model('https://github.com/dipspilani/Covid-using-Transfer-Learning-web-app/blob/main/effnet.h5')
+        model5 = tf.keras.models.load_model('effnet.h5')
         return model5
 
         
