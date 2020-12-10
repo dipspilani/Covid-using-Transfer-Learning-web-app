@@ -39,9 +39,9 @@ elif mode=='Normal':
     st.table(algos)
 
     st.sidebar.subheader('Steps to use the tool:')
-    st.sidebar.info('1. Move the image to the same working directory as the .py file')
-    st.sidebar.info('2. Browse and open the file using File Uploader')
-    st.sidebar.info('3. Select Model')
+#     st.sidebar.info('1. Move the image to the same working directory as the .py file')
+    st.sidebar.info('1. Browse and open the file using File Uploader')
+    st.sidebar.info('2. Select Model')
 
     
 
