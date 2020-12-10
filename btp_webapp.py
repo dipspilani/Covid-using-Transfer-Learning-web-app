@@ -29,6 +29,7 @@ mode = st.sidebar.radio('Mode' , ('Normal' , 'Code' , 'Statistics'))
 if mode=='Code':
     st.write('Follow the link:')
     st.write('https://drive.google.com/file/d/1ndjYY_GoaZ_IM33FyUGiejhbDXBMkRyM/view?usp=sharing')
+    st.write('https://github.com/dipspilani/Covid-using-Transfer-Learning-web-app/')        
     st.balloons()
 elif mode=='Normal':
     st.header("Models and their performances")
@@ -115,7 +116,7 @@ elif mode=='Normal':
         
         
     st.sidebar.subheader("Get prediction from model")
-    model_select = st.sidebar.selectbox('Select Model', ('None','VGG16', 'MobileNet','ResNet50' , 'EfficientNetB0'))  
+    model_select = st.sidebar.selectbox('Select Model (only efficientnet runs, rest are too large to run)', ('None','VGG16', 'MobileNet','ResNet50' , 'EfficientNetB0'))  
     if model_select=='VGG16':
         with st.spinner('Loading VGG16..'):
             vmodel = load_vgg16()
