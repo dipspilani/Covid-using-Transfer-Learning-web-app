@@ -1,3 +1,4 @@
+!git clone https://github.com/dipspilani/Covid-using-Transfer-Learning-web-app/
 import streamlit as st
 import plotly.express as px
 import numpy as np
