@@ -12,7 +12,6 @@ from tensorflow.keras.preprocessing import image
 import time
 from PIL import Image
 
-$ git clone --bare https://github.com/dipspilani/Covid-using-Transfer-Learning-web-app
 
 st.set_page_config(page_title='COVID Diagnosis using X-Ray samples' , page_icon = ':hospital:' , layout='wide')
 st.title("COVID-19 Diagnosis using X-Ray samples via Transfer Learning:syringe: :hospital:")
