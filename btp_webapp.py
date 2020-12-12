@@ -117,7 +117,7 @@ elif mode=='Normal':
         
         
         
-    st.sidebar.subheader("Get prediction from model")
+    st.sidebar.subheader("Get prediction from model - select EfficientNet only")
     model_select = st.sidebar.selectbox('Select Model (only efficientnet runs, rest are too large to run)', ('None','VGG16', 'MobileNet','ResNet50' , 'EfficientNetB0'))  
     if model_select=='VGG16':
         with st.spinner('Loading VGG16..'):
