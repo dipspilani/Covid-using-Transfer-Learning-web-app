@@ -60,8 +60,10 @@ elif mode=='Normal':
         model4 = tf.keras.models.load_model('resnet.h5')
         return model4
 
-    @st.cache(allow_output_mutation=True , hash_funcs={tf.keras.models.Model: id})
+    @st.cache(allow_output_mutation=True , hash_funcs={tf.Session: id})
     def load_effnet():
+        config = tf.ConfigProto(allow_soft_placement=True)
+        session = tf.Session(config=config)
         model5 = tf.keras.models.load_model('effnet.h5')
         return model5
 
