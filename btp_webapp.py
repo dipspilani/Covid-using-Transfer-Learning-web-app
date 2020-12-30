@@ -18,7 +18,7 @@ st.title("COVID-19 Diagnosis using X-Ray samples via Transfer Learning:syringe: 
 st.sidebar.title("Menu")
 st.markdown("This application is a Streamlit dashboard used "
             "for **COVID-19 diagnosis using Neural Nets**")
-st.markdown('Developed by Mayank Dipanshu Prashant Tanmay')
+st.markdown('Developed by Dipanshu')
 
  
 st.write("**Tensorflow Version (must be higher than 2.2.0): **  ",tf.__version__)                       
